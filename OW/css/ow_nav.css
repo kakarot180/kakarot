@@ -1,0 +1,1183 @@
+/*！========下方为全局css开始*/
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: '微软雅黑', sans-serif, tahoma;
+}
+a{
+    text-decoration:none;
+    color: #333333;
+}
+body{
+    overflow-x: hidden;
+}
+.body{
+    width: 100vw;
+}
+/*清除子级li浮动导致父级ul高度崩塌*/
+.clearfix{
+    clear: both;
+}
+.clearfix:after,.clearfix:before{
+    clear: both;
+    content: "";
+    display: block;
+}
+/*！======上方全局css已结束*/
+
+/*！=======下方为暴雪游戏的导航样式*/
+/*！======PC开始*/
+.OW_nav_container{
+    position: relative;
+    background-color: rgba(0,0,0,.5);
+    height: 40px;
+    z-index: 105;
+}
+.OW_nav_box{
+    margin: 0 auto;
+    max-width: 1600px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+}
+.indexOW_LOGO>a{
+    display: block;
+    background: url("../sprite_icon/index_icon.png") no-repeat -18px -75px;
+    width: 61.82004px;
+    height: 40px;
+}
+.OW_nav_item{
+    display: flex;
+    position: relative;
+}
+.OW_nav_item>li{
+    margin-right: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+    position: relative;
+}
+/*这个伪类是用于添加背景模糊效果*/
+.fist_nav_div:before{
+    display: block;
+    position: absolute;
+    content: "";
+    background: rgba(255,255,255,0.4);
+    width: 30px;
+    height: 18px;
+    filter: blur(7px);
+}
+.battlenet_icon{
+    width: 14px;
+    height: 7px;
+    transform: translateX(2px);
+    background: url("../sprite_icon/index_icon.png") no-repeat -147px -131px;
+}
+.OW_nav_list{
+    transition: all 0.2s linear;
+    cursor: pointer;
+}
+.OW_nav_list>a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.OW_nav_item>.list_first>a{
+    color: #fff;
+}
+.OW_nav_list>a{
+    color: #ffffffb3;
+}
+.OW_nav_right>li{
+    margin-right: unset;
+    margin-left: 30px;
+}
+.underAge{
+    margin-right: 50px !important;
+}
+.underAge>a>img{
+    margin-right: 5px;
+}
+/*↓导航hover*/
+.OW_nav_list:hover>a,
+.OW_nav_right>.OW_nav_list:nth-child(2):hover>a {
+    color: #fff !important;
+    transition: all 0.2s linear;
+}
+
+
+
+/*！=======下方为OW守望先锋网页的导航样式*/
+.hero_ow_nav{
+    position: fixed;
+    width: 100%;
+    max-width:1600px;
+    height: 48px;
+    top: 80px;
+    display: flex;
+    align-items: center;
+    background-color:#f2f1ed;
+    justify-content: space-between;
+    z-index: 99;
+    left:50%;
+}
+.hero_ow_nav_left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.hero_ow_nav_logo{
+    cursor: pointer;
+    border: 1px solid #4b535d;
+    width: 53px;
+    height: 48px;
+    background: url("../sprite_icon/nav_ow_logo.jpg") no-repeat 0 0;
+}
+
+.hero_ow_nav_item{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero_ow_nav_list{
+    height: 100%;
+    background-color:#f2f1ed;
+    border-right: 1px solid #e5e3dc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+}
+.hero_ow_nav_list>a{
+    height: 100%;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4b535d;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+    border-bottom: 3px solid transparent;
+    /*使得效果延迟0.2s实现，有延迟，而hover的时候延迟为0在hover的样式上*/
+    /*为:transition:all 0s*/
+}
+.hero_ow_nav_list_checked_web_style{
+    border-bottom-color: #e67b00!important;
+    color: #f7931e!important;
+}
+.hero_ow_nav_list_img{
+    width: 14px;
+    height: 8px;
+    margin: 4px 0 0 7px;
+    background: url("../sprite_icon/nav_arrow.png") no-repeat 0 0;
+}
+.hero_ow_nav_buyBtn{
+    height: 100%;
+    background-color: #f7931e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.1s linear;
+    cursor: pointer;
+}
+.hero_ow_nav_buyBtn>a{
+    display: block;
+    padding: 0 40px;
+    color: #fff;
+    font-weight: 700;
+}
+.hero_ow_nav_bzLogo{
+    display: none;
+}
+/*适龄游玩提示*/
+.age_Tips{
+    width: 66px;
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    margin-left: -808px;
+    display: block;
+    z-index: 90;
+}
+.age_Tips>img{
+    width: 100%;
+}
+/*隐藏列表*/
+.hero_ow_nav_hide_item{
+    position: absolute;
+    left: 0;
+    top: 100%;
+    min-width: 160px;
+    height: auto;
+    display: none;
+}
+.hero_ow_nav_hide_list{
+    position: relative;
+}
+.hero_ow_nav_hide_list>a{
+    width: 100%;
+    min-height: 21px;
+    box-sizing: unset;
+    color: #fff;
+    background-color: #353c42;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid rgb(75,83,93);
+    padding: 15px 0;
+    font-size: 14px;
+    font-weight: 100;
+    letter-spacing: 0.5px;
+    text-indent: 8px;
+    display: flex;
+    align-items: center;
+}
+.hero_ow_nav_hide_list:hover>a:before{
+    content: "";
+    display: block;
+    width: 1px;
+    height: 14px;
+    position: absolute;
+    left: 0;
+    background-color: rgb(247, 147, 30);
+}
+.hero_ow_nav_hide_item>li:last-child>a{
+    border-color: transparent;
+}
+.hero_ow_nav_list:hover>a>.hero_ow_nav_list_img{
+    background: url("../sprite_icon/nav_arrow.png") no-repeat 0 -8px;
+}
+/*守望先锋官网导航hover*/
+/*守望先锋官网导航hover*/
+.hero_ow_nav_list:hover>a{
+    background-color: #353c42;
+    color: #f7931e;
+    transition: all 0s;
+    /*使得hover效果直接实现，没有延迟，而恢复的时候延迟在hover之前的样式上*/
+    /*为:transition:all 0.2s*/
+}
+.hero_ow_nav_buyBtn:hover{
+    background-color: rgb(246,157,53);
+    transition: background-color 0.1s linear;
+}
+
+
+/*屏幕遮罩*/
+.shade{
+    position: fixed;
+    background-color: rgba(0,0,0,.75);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: none;
+    z-index: 101;
+}
+.shade_container{
+    width: 100%;
+    position: absolute;
+    top: 40px;
+    background-color: rgba(21,26,35,0.95);
+    background: radial-gradient(ellipse farthest-side at center top,#283244 0,rgba(21,26,35,.95) 100%);
+    border: solid 1px rgba(255,255,255,.15);
+    z-index: 105;
+    display: none;
+}
+.shade_box{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shade_content{
+    width: 1600px;
+    max-width: 1600px;
+    padding: 0 40px;
+    height: 100%;
+    display: none;
+}
+.shade_content_box{
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+}
+.shade_content_box_top{
+    min-height: 225px;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom:solid 1px rgba(255,255,255,.08) ;
+}
+.shade_box>div:nth-child(2) .shade_content_box_top>a{
+    overflow: hidden;
+    width: calc((100% / 9) - 17.77778px);
+    display: flex;
+    justify-content: center;
+}
+.shade_box>div:nth-child(2) .shade_content_box_top>a>img{
+    height: 180px;
+    width: 216px;
+}
+.shade_div_border{
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    top: -4px;
+    background-color: rgb(27,33,45);
+    border: solid 1px rgba(255,255,255,.15);
+    border-right:0;
+    border-bottom: 0;
+    transform: rotate(45deg);
+    z-index: 105;
+}
+.shade_box>div:nth-child(2) .shade_content_box_top>a{
+    animation-name: navBar;
+    animation-duration: 0.6s;
+    border: rgba(255,255,255,.15) solid 1px;
+    transition: all 0.3s linear;
+}
+.shade_box>div:nth-child(2) .shade_content_box_top>a:hover{
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(255,255,255,.3);
+    filter: brightness(1.25);
+    transition: filter 0.15s linear;
+}
+.shade_content_box_bottom{
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shade_content_box_bottom>a{
+    transition: color 0.3s linear;
+    color: #ffffffB3;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20px;
+}
+.shade_content_box_bottom>a:hover{
+    color: #ffffff;
+    transition: color 0.3s linear;
+}
+.shade_content_box_bottom .icon{
+    background: url("../sprite_icon/index_icon.png") no-repeat;
+    width: 24px;
+    height: 24px;
+}
+.icon0,.icon2{
+    background-position:  -169px -70px!important;
+}
+.icon1{
+    background-position:  -169px -44px!important;
+}
+.icon3{
+    background-position:  -169px -102px!important;
+}
+.shade_content_box_bottom .text{
+    margin-left: 5px;
+}
+/*遮罩2*/
+.shade_box>div:nth-child(3){
+    width: 100%;
+    max-width: unset;
+    padding: unset;
+}
+.shade_box>div:nth-child(3) .shade_content_box{
+    padding: 0;
+}
+.shade_box>div:nth-child(3) .shade_content_box_top{
+    justify-content: center;
+    padding: 0;
+}
+.shade_box>div:nth-child(3) .shade_content_box_top>.shade_tow{
+    display: flex;
+    min-width: 192px;
+}
+.shade_box>div:nth-child(3) .shade_content_box_top>.shade_tow>a{
+    max-width: 192px;
+    width: 100%;
+    color: #ffffffb3;
+    font-size: 13px;
+    min-height: 275px;
+    padding: 20px 0;
+    transition: all 0.1s linear;
+}
+.shade_box>div:nth-child(3) .shade_content_box_top>.shade_tow>a>img{
+    width: 100%;
+}
+.shade_box>div:nth-child(3) .shade_content_box_top>.shade_tow>a>.text{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shade_box>div:nth-child(3) .shade_content_box_top>.shade_tow>a:hover{
+    color: #fff;
+    background-color:rgba(255,255,255,0.05);
+    transition: all 0.1s linear;
+}
+.shade_item{
+    max-width: 100px;
+    box-sizing: border-box;
+    display: none;
+    max-height: 275px;
+    background-color: rgba(21,26,35,1);
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,.2);
+    border-top: 0;
+    border-bottom: 0;
+}
+.shade_item_box{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+.shade_list{
+    width: 100%;
+    height: 33.33333%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.shade_list>img{
+    width: 100%;
+}
+.shade_list:hover{
+    background-color: rgba(255,255,255,0.08);
+    border: 1px solid rgba(0,0,0,0.15);
+}
+.small1320_text{
+    display: none;
+}
+/*遮罩4*/
+.shade_box>div:nth-child(4){
+    padding: unset;
+    width: 320px;
+    height: auto;
+    background: linear-gradient(to bottom,#283244 0,rgba(21,26,35,1) 100%);
+}
+.shade_first_box{
+    height: 80px;
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.shade_one{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 8px 50px;
+    background-color:rgb(14,134,202);
+    border:1px solid #00aeff;
+    font-size:16px;
+    font-weight: 400;
+    color: #fff;
+    transition: background-color 0.3s linear;
+    border-bottom: 0;
+}
+.shade_last_box{
+    height: 44px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.7);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-top: 0;
+    transition: all 0.1s linear;
+}
+.shade_last_box:hover{
+    background-color: rgba(255,255,255,0.05);
+    color: #fff;
+    transition: all 0.1s linear;
+}
+/*遮罩4精灵图*/
+.shade_last_box>.icon{
+    width: 24px;
+    height: 24px;
+    background: url("../sprite_icon/index_icon.png") no-repeat -140px -36px;
+    margin-right: 5px;
+}
+.shade_content>.shade_last_box:last-child>.icon{
+    background-position: -200px -40px;
+}
+/*遮罩4hover*/
+.shade_one:hover{
+    background-color: rgb(0,174,255);
+    transition: background-color 0.3s linear;
+}
+
+
+
+/*遮罩内容出现动画*/
+.shade_box>div:nth-child(3) .shade_tow{
+    animation-name: navBar;
+    animation-duration: 0.6s;
+}
+.shade_content_box_bottom{
+    animation-name: navBar;
+    animation-duration: 0.9s;
+}
+@keyframes navBar {
+    0%{
+        transform:translateY(-20px);
+        opacity: 0;
+    }
+    66.66667%{
+        transform:translateY(-20px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/*用于js，jq的添加移除样式*/
+/*暴雪nav导航点击板块*/
+.battlenet_div_clickColor{
+    color: #ffffff4d!important;
+}
+.battlenet_this_a_color{
+    color: #ffffffb3 !important;
+}
+.battlenet_this_first_a_color{
+    color: #ffffff !important;
+}
+.battlenet_this_arrow_position{
+    background-position: -147px -145px;
+}
+.mobile_bz_header{
+    display: none;
+}
+/*js,jq暴雪遮罩3更改样式*/
+.shade_three{
+    background-color: unset;
+    background: unset;
+    border: unset;
+}
+.shade_box_three{
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+.shade_content_three{
+    position: absolute;right: 20px;top: 0
+}
+
+
+/*
+页脚
+ */
+.ow_footer{
+    width: 100%;
+    background-color:#202020 ;
+    position: relative;
+}
+.ow_footer>.footer{
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 0 20px;
+}
+.footer>.f_about{
+    padding-top: 40px;
+    display: flex;
+}
+.footer>.f_about>a{
+    font-size: 14px;
+    color: #ffffff;
+    margin-right: 37px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer>.f_about>a>span{
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    display:inline-block;
+    background: url("../sprite_icon/1_images_common_sprite-24-blue.png") no-repeat;
+}
+.footer>.f_about>a:nth-child(1)>span{
+    background-position:-96px 0;
+}
+.footer>.f_about>a:nth-child(2)>span{
+    background-position:-144px -24px;
+}
+.footer>.f_about>a:nth-child(3)>span{
+    background-position:-24px -120px;
+}
+.ow_footer .cprt{
+    padding: 50px 0 20px 0;
+    display: flex;
+    border-bottom: 1px solid #ffffff4D;
+}
+.ow_footer .cprt>a{
+    display: inline-block;
+}
+.ow_footer .cprt>a:nth-child(1){
+    width: 137px;
+    height: 80px;
+    background: url("../sprite_icon/1_images_layout_blizzard.png") no-repeat;
+    background-position: center!important;
+    margin-right: 25px;
+}
+.ow_footer .cprt>a:nth-child(2){
+    width: 187px;
+    height: 80px;
+    background: url("../sprite_icon/1_footer_logo_ne.png") no-repeat;
+    background-position: left bottom+8px!important;
+}
+.ow_footer .info{
+    float: right;
+    width: 630px;
+    padding: 0 0 0 62px;
+}
+.ow_footer .info .statement{
+    padding-bottom: 5px;
+    margin-bottom:3px;
+}
+.ow_footer .info .statement>li{
+    color: #CCCCCC;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    float: left;
+}
+.ow_footer .info .statement>li>a
+{
+    font-size: 14px;
+    color: #CCCCCC;
+    padding: 0 10px;
+}
+.ow_footer .info .statement>li:hover a{
+    color: #fff;
+}
+.ow_footer .info>p,
+.ow_footer .info>.integrity,
+.ow_footer .info>.integrity a{
+    font-size: 12px;
+    color: #ffffff80;
+    line-height: 20px;
+}
+.ow_footer .info>p>a{
+    color: #ffffff80;
+}
+.ow_footer .info>p>a:hover,
+.ow_footer .info>.integrity a:hover{
+    color: #ffffff;
+}
+.ow_footer .info>.integrity{
+    padding: 8px 0;
+    display: flex;
+}
+.ow_footer .info>.integrity>p{
+    text-indent: 6px;
+}
+.ow_footer .footer>.tips{
+    font-size: 12px;
+    color: #ffffff4d;
+    text-align: center;
+    max-width: 798px;
+    margin: 0 auto;
+    line-height: 20px;
+    padding-bottom: 18px;
+}
+/*
+页尾结束
+ */
+
+/*
+返回顶部
+ */
+.backTOP{
+    width:40px ;
+    height:30px;
+    color:#000000 ;
+    font-size: 12px;
+    background-color: rgba(255,255,255,.25);
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+    visibility: hidden;
+}
+
+
+@media (max-width: 1903px) {
+    .age_Tips{
+        width: 66px;
+        position: absolute;
+        top: 130px;
+        left: 50%;
+        margin-left: -800px;
+        display: block;
+    }
+}
+@media (max-width: 1600px) {
+    .shade_content{
+        width: 100%;
+        max-width: unset;
+    }
+}
+@media (max-width: 1630px) {
+    .age_Tips{
+        width: 50px;
+        left: 5vw;
+        margin-left: unset;
+    }
+}
+@media (max-width: 1320px) {
+    .small1320_text{
+        display: block;
+        font-size: 12px;
+        color: #ffffffb3;
+    }
+    .small1320_box{
+       max-width: 98px;
+    }
+    .shade_content_box_top{
+        padding: 0;
+        min-height: unset;
+    }
+    .shade_box>div:nth-child(2) .shade_content_box_top>a{
+        border: 0;
+        min-height: 130px;
+        align-items: center;
+        flex-direction: column
+    }
+    .shade_box>div:nth-child(2) .shade_content_box_top>a>img{
+        width: 64px;
+        height: 64px;
+    }
+    .shade_box>div:nth-child(2) .shade_content_box_top>a:hover{
+        border: 0;
+    }
+}
+@media (max-width: 1285px) {
+    .shade_box>div:nth-child(3) .shade_content_box_top>.shade_tow{
+        min-width: 156px;
+    }
+    .shade_box>div:nth-child(3) .shade_content_box_top>.shade_tow>a{
+        max-width: 156px;
+        min-height: 239px;
+    }
+    .shade_item{
+        width: 6.77vw;
+    }
+}
+@media (max-width: 1200px) {
+    .shade_box>div:nth-child(3) .shade_content_box_top>.shade_tow{
+        min-width: 13vw;
+    }
+    .shade_box>div:nth-child(3) .shade_content_box_top>.shade_tow>a{
+        max-width: 13vw;
+        min-height: 210px;
+    }
+}
+@media (max-width: 1028px){
+    .OW_nav_right>li{
+        margin-left: unset;
+    }
+    .OW_nav_item>li{
+        margin-right: 30px;
+    }
+    .OW_nav_right>li:last-child{
+        margin-right: 0;
+    }
+    .underAge{
+        margin-right: 30px !important;
+    }
+}
+@media (max-width: 960px) {
+    .OW_nav_box{
+        padding: 0 20px;
+    }
+    .OW_nav_item>li{
+        margin-right: 15px;
+    }
+    .hero_ow_nav_list>a{
+        padding: 0 8px;
+    }
+    .hero_ow_nav_list_checked_web_style{
+        border-bottom-color: transparent!important;
+        color: #f7931e!important;
+    }
+}
+/*！======PE开始*/
+@media (max-width: 767px) {
+    .OW_nav_container{
+        width: 100%;
+    }
+    .header{
+        display: none;
+    }
+    /*
+    手机端显示导航栏
+     */
+    .hero_ow_nav{
+        overflow: scroll;
+    }
+    .navBar_mobile{
+        background-color: #fff;
+        height: 48px;
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        /*z-index: 100;*/
+    }
+    .navBar_mobile>.iconLogo{
+        width: 48px;
+        height: 100%;
+        position: relative;
+        z-index: 103;
+    }
+    .click_show_owNavbar{
+        background: url("../sprite_icon/1_assets_img_logos_show_side_icon.png") no-repeat;
+    }
+    .logo_show_owNavbar{
+        background: url("../sprite_icon/1_assets_img_logos_mobile_nav_logo.png") no-repeat;
+        background-size: 36px;
+        background-position: 50% !important;
+    }
+    .blizzard_show_owNavbar{
+        background: url("../sprite_icon/mobile_bx_icon.png") no-repeat;
+        background-position: 50%!important;
+    }
+    /*
+    导航栏
+     */
+    .offNav_mobile{
+        width:30px;
+        height:30px;
+        background: url("../sprite_icon/offNav.jpg") no-repeat;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .hero_ow_nav_left,
+    .hero_ow_nav{
+        flex-direction: column;
+    }
+    .hero_ow_nav_left,.hero_ow_nav_item{
+        height: unset;
+    }
+    .hero_ow_nav{
+        width: 100%;
+        height:100%;
+        max-width: 320px;
+        left: 0;
+        top: 0;
+        background-color: #2f3543;
+        justify-content: normal;
+        align-items: normal;
+        z-index: 120;
+        display: none;
+    }
+    .hero_ow_nav_left{
+        width: 100%;
+    }
+    .hero_ow_nav_logo{
+        display: flex;
+        margin: 20px 0;
+        width: 100%;
+        background: url("../img/ow_home/swxf_TEXT.png") no-repeat;
+        background-size: 80%;
+        background-position: 50% !important;
+        border: 0;
+        box-sizing: unset;
+        padding: 8px 0;
+    }
+    .hero_ow_nav_item{
+        flex-direction: column;
+        width: 100%;
+        justify-content: normal;
+        align-items: normal;
+    }
+    .hero_ow_nav_item>li{
+        width: 100%;
+        background-color: #2f3543;
+        border-top: 1px solid rgba(255,255,255,.1);
+        border-right: 0;
+        justify-content: flex-start;
+        min-height: 57px;
+        flex-direction: column;
+        height: auto;
+    }
+    .hero_ow_nav_item>li>a{
+        width: 100%;
+        justify-content: normal;
+        color: #ffffffD9;
+        font-size: 16px;
+        padding: 15px 20px;
+    }
+    .hero_ow_nav_buyBtn{
+        height: 49px;
+    }
+    .hero_ow_nav_buyBtn>a{
+        font-weight: 500;
+        letter-spacing: 1px;
+        font-size: 18px;
+    }
+    .hero_ow_nav_bzLogo{
+        display: block;
+        width: 100%;
+        margin: 20px auto;
+        text-align: center;
+    }
+    .hero_ow_nav_bzLogo>img{
+        padding-bottom: 80px;
+    }
+    /*守望先锋导航二级列表*/
+    .hero_ow_nav_hide_item{
+        width: 100%;
+        position: unset;
+    }
+    .hero_ow_nav_item>li:first-child>a{
+        padding-left: 20px;
+    }
+    .hero_ow_nav_item>li>a{
+        padding-left: 28px;
+    }
+    .hero_ow_nav_list:hover>a{
+        background-color: unset;
+        color: #ffffffD9;
+    }
+    .hero_ow_nav_hide_list>a{
+        font-size: 16px;
+        padding-left: 34px;
+        box-sizing: border-box;
+    }
+    .hero_ow_nav_hide_list:hover>a:before{
+        background-color: transparent;
+    }
+    .hero_ow_nav_list:hover>a>.hero_ow_nav_list_img{
+        background: url("../sprite_icon/nav_arrow.png") no-repeat 0 0;
+    }
+    /*
+    屏幕遮罩
+     */
+    .shade{
+        background-color: rgba(0,0,0,.55);
+    }
+    /*
+
+    暴雪导航
+
+     */
+    .mobile_bz_header{
+        display: block;
+    }
+    .mb_bz_header_box{
+        overflow: scroll;
+        display: none;
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 320px;
+        background-color: #151a23;
+        z-index: 120;
+    }
+    .offNav_bz{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 24px;
+        height: 24px;
+        background: url("../sprite_icon/index_icon.png") no-repeat -95px -124px;
+    }
+    .mb_bz_header_content{
+        display: flex;
+        flex-direction: column;
+    }
+    .mb_bz_back_bzWeb{
+        width: 100%;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .mb_bz_back_bzWeb>.bg_box{
+        width: 89px;
+        height: 40px;
+        background: url("../sprite_icon/index_icon.png") no-repeat -18px -17px;
+    }
+    .login_register{
+    }
+    .login_register>.login{
+        box-sizing: initial;
+        padding: 20px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .login_register>.login>a{
+        display: block;
+        text-align: center;
+        padding: 10px 50px;
+        line-height: 16px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #0e86ca;
+        border: 1px solid #00aeff;
+    }
+    .login_register>.register>li{
+        font-size: 16px;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        height: 44px;
+        line-height: 44px;
+    }
+    .login_register>.register>li>a{
+        padding: 0 20px 0 44px;
+        display: block;
+        color: #ffffffb3;
+    }
+    .login_register>.register>li>a:hover,
+    .hide_bzNavBar>li>a:hover,
+    .hide_bzNavBar>li>.game>li>a:hover
+    {
+        background-color: rgb(31,35,42);
+    }
+    .bzNavBar_MP>li>a{
+        line-height: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        border-top: 1px solid rgba(255,255,255,0.1);
+        font-size: 16px;
+        padding: 0 20px;
+        color: #ffffffb3;
+        background-color: #151a23;
+        position: relative;
+    }
+    .bzNavBar_MP>li>a>.battlenet_icon{
+        margin-left: 5px;
+    }
+    .hide_bzNavBar>li,.bzNavBar_MP>li{
+        position: relative;
+    }
+    .hide_bzNavBar>li>a{
+        font-size: 16px;
+        color: #00aeff;
+        padding: 0 20px;
+        height: 44px;
+        line-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+    .hide_bzNavBar{
+        display: none;
+    }
+    .bzNavBar_MP .before::before{
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        width: 5px;
+        height: 100%;
+        background-color:rgb(0,174,255);
+    }
+    .hide_bzNavBar .before::before{
+        background-color: rgb(13,69,99);
+    }
+    .hide_bzNavBar_gameIcon{
+        width: 24px;
+        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .hide_bzNavBar_gameIcon>img{
+        width: 100%;
+        height: 100%;
+    }
+    .hide_bzNavBar>li>.game>li{
+        height: 44px;
+        line-height: 44px;
+    }
+    .hide_bzNavBar>li>.game>li>a{
+        display: block;
+        padding: 0 40px;
+        color: #00aeff;
+        font-size: 16px;
+    }
+    .hide_bzNavBar .positionIcon{
+        margin-right: 5px;
+    }
+    .MP_underAge{
+        background: url("../img/ow_home/1_common_juveniles.png") 0 0;
+        width: 14px;
+        height: 18px;
+        margin-left: 10px;
+    }
+
+        /*
+        暴雪导航，js/jq添加样式
+            ↓
+            ↓
+            ↓
+         */
+    .bz_click_a_color{
+        color: #ff9c00!important;
+    }
+
+    /*
+    页脚
+     */
+    .footer>.f_about,
+    .ow_footer .cprt>a{
+        display: none;
+    }
+    .ow_footer .info{
+        float: unset;
+        padding: 0 30px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+    .ow_footer .info .statement>li:first-child>a{
+        padding-left:0 ;
+    }
+    .ow_footer .footer>.tips{
+        /*max-width: 80%;*/
+        padding-bottom: 120px;
+    }
+
+    /*
+    返回顶部
+     */
+    .backTOP{
+        width: 30px;
+        height: 20px;
+    }
+}
+
+/*引入字体*/
+@font-face {
+    font-family: "BigNoodelToo";
+    src:url('../Fonts/big-noodle-too.woff.ttf');
+    font-weight:normal;
+    font-style:normal;
+}

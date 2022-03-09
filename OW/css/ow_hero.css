@@ -1,0 +1,244 @@
+*{
+    background-repeat:no-repeat;
+}
+body{
+    background: url("../img/ow_hero/bg.jpg") no-repeat top center;
+    background-color: #d0c7dc;
+}
+.OW_nav_container{
+    background-color: rgba(0,0,0,0.7);
+}
+
+.ow_hero_box{
+    padding-top: 88px;
+}
+.ow_hero_content_box{
+    max-width: 1250px;
+    margin: 50px auto;
+    padding: 0 30px;
+
+}
+.looking_heroes>h2{
+    font-size: 58px;
+    letter-spacing: 0.8px;
+    font-weight: 400;
+    font-style: italic;
+}
+.looking_heroes>p{
+    font-size: 24px;
+    margin-top: 12px;
+}
+.sort_btn{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.sort_btn>li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 24.9%;
+    padding: 11px 0;
+    border-radius: 2px;
+    background-color: rgba(255,255,255,.5);
+    box-sizing: initial;
+    transition: background-color 0.3s linear;
+    opacity: 0.7;
+}
+.sort_btn>li>span{
+    color: #1a325e;
+}
+.svg_icon{
+    height: 18px;
+    fill:#1a325e;
+    margin-right: 9px;
+}
+.sort_btn_bgColor{
+    opacity: 1!important;
+    background-color: #fff!important;
+}
+
+.sort_btn>li:hover{
+    background-color: #fff;
+    transition: background-color 0.2s linear;
+    opacity: 1;
+}
+.sort_btn_li_opacity{
+    opacity: 1!important;
+}
+
+
+
+
+.heroes_show{
+    margin: 50px 0;
+}
+.heroes_show_box{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+.this_hero_show{
+    width: 13.8%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.1s linear;
+    margin: 0 0.48% 0.48% 0;
+    display: flex;
+}
+.this_hero_show>a{
+    display: flex;
+    position: absolute;
+    height: 100%;
+    border-color: rgba(255,255,255,0.4);
+    border-width: 2px;
+    border-style: solid;
+    transition: all 0.1s linear;
+    box-sizing: border-box;
+    background: url("../img/ow_hero/hero_show_bg.jpg") no-repeat;
+    background-size: cover;
+}
+.this_hero_show>a>img{
+    width: 100%;
+}
+.hero_name_sort_box{
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height:8vh;
+    background-color: rgba(40,53,79,.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #D0D0DC;
+}
+
+.hero_name_sort_box>.hero_name{
+    font-style: italic;
+    font-family: "BigNoodelToo",sans-serif ;
+    font-size: 32px;
+}
+.hero_name_sort_box>.svg_icon{
+    position: absolute;
+    left: 8px;
+    top: 8px;
+    fill: #fff;
+    height: 2.2vh;
+}
+.this_hero_show:hover{
+    z-index: 50;
+}
+.this_hero_show:hover .this_hero_a{
+    transform: scale(1.15);
+    border-color: #fff;
+}
+.this_hero_show:hover .hero_name_sort_box{
+    background-color: #fff;
+    left: -1px;
+    width: calc(100% + 2px);
+}
+.this_hero_show:hover .hero_name{
+    color: #1a325e;
+}
+.this_hero_show:hover .svg_icon{
+    fill: #1a325e;
+}
+
+.heroes_show_shade:before{
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0 0 57px 14px rgba(0,195,255,0.7);
+}
+.sort_hero_nav_sort_box{
+    background-color: #00C3FFFA;
+    color: #fff;
+}
+.not_heroes_show_shade{
+    opacity: .8;
+    filter: grayscale(40%);
+}
+.not_heroes_show_shade:hover{
+    opacity: 1;
+    filter: unset;
+}
+.heroes_show_shade:hover::before{
+    content: unset;
+}
+.this_hero_show:before{
+    content: "";
+    padding-top: 172%;
+    display: block;
+    width: 100%;
+}
+
+
+
+@media (max-width: 1300px){
+    .this_hero_show{
+        width: 16.3%;
+    }
+}
+@media (max-width: 992px){
+    .this_hero_show{
+        width: 19.6%;
+    }
+    .looking_heroes>h2{
+        font-size: 48px;
+    }
+}
+@media (max-width: 767px){
+    .sort_btn>li{
+        width: 24.5%;
+    }
+    .looking_heroes>h2{
+        font-size: 39px;
+    }
+    .ow_hero_content_box{
+        padding: 0 15px;
+    }
+    .ow_hero_box{
+        padding-top: 0;
+    }
+    .sort_btn>li{
+        flex-direction: column;
+        align-items: center;
+        font-size: 14px;
+    }
+    .svg_icon{
+        margin-right: 0;
+        height: 34px;
+        padding-bottom: 5px;
+    }
+    .this_hero_show{
+        width: 33%;
+    }
+    .hero_name_sort_box{
+        align-items: flex-start;
+        flex-direction: column-reverse;
+    }
+    .hero_name_sort_box>.hero_name{
+        font-size: 25px;
+        width: 100%;
+        text-align: center;
+    }
+    .hero_name_sort_box>.svg_icon{
+        position: unset;
+        height: 2.5vh;
+        margin: 0 8px;
+    }
+}
+@media (max-width: 400px){
+    .looking_heroes>p{
+        font-size: 20px;
+    }
+    .this_hero_show{
+        width: 49.5%;
+    }
+}

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>英雄- 《守望先锋》官方网站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--引入浏览器网页标签图标-->
+    <link rel="icon" href="../img/ow_home/OWlogo.ico">
+    <!--引入的导航层叠样式表-->
+    <link rel="stylesheet" href="../css/ow_nav.css">
+    <!--引入的首页层叠样式表-->
+    <link rel="stylesheet" href="../css/ow_hero.css">
+    <!--引入Vue文件-->
+    <script src="../ImportFile/vue.js"></script>
+    <!--引入jquery-->
+    <script src="../ImportFile/jquery-3.6.0.js"></script>
+    <!--引入导航js-->
+    <script src="../js/ow_nav.js"></script>
+    <!--引入首页js文件-->
+    <script src="../js/ow_hero.js"></script>
+</head>
+<body>
+<div class="body">
+    <!--遮罩-->
+    <div class="shade"></div>
+    <!--暴雪导航栏-->
+    <header class="header">
+        <div class="OW_nav_container">
+            <div class="OW_nav_box">
+                <ul class="OW_nav_item">
+                    <li class="indexOW_LOGO OW_nav_list">
+                        <a href="https://www.battlenet.com.cn/zh/" alt="暴雪官网" target="_blank"></a>
+                    </li>
+                    <li class="OW_nav_list list_first">
+                        <a href="javascript:">
+                            <div class="battlenet_game fist_nav_div">游戏</div>
+                            <div class="battlenet_icon"></div>
+                        </a>
+                    </li>
+                    <li class="OW_nav_list">
+                        <a href="#">
+                            <div class="battlenet_game">商城</div>
+                        </a>
+                    </li>
+                    <li class="OW_nav_list">
+                        <a href="#">
+                            <div class="battlenet_game">新闻</div>
+                        </a>
+                    </li>
+                    <li class="OW_nav_list">
+                        <a href="javascript:">
+                            <div class="battlenet_game">电子竞技</div>
+                            <div class="battlenet_icon"></div>
+                        </a>
+                    </li>
+                    <li class="OW_nav_list">
+                        <a href="#">
+                            <div class="battlenet_game">暴雪嘉年华</div>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="OW_nav_item OW_nav_right">
+                    <li class="OW_nav_list underAge">
+                        <a href="#" target="_blank">
+                            <img src="../img/ow_home/1_common_juveniles.png" alt="未成年绿叶图标">
+                            <div>未成年人家长监护</div>
+                        </a>
+                    </li>
+                    <li class="OW_nav_list">
+                        <a href="#">
+                            <div class="battlenet_game">支持</div>
+                        </a>
+                    </li>
+                    <li class="OW_nav_list">
+                        <a href="javascript:">
+                            <div class="battlenet_game">我的账户</div>
+                            <div class="battlenet_icon"></div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--遮罩触发后显示内容-->
+        <div class="shade_container">
+            <div class="shade_box">
+                <div class="shade_div_border"></div>
+                <div class="shade_content">
+                    <div class="shade_content_box">
+                        <div class="shade_content_box_top">
+                            <!--Vue循环+es6传图片模板字符串-->
+                            <a href="#" target="_blank" v-for="(img1,i) of headerHiddenImg">
+                                <!--Vue判断屏幕宽度小于1320时，循环显示另一套图片-->
+                                <img v-bind:src="nn === true ? `../img/ow_nav_images/${img1.first}` : `../img/ow_nav_images/${img1.img}`" alt="">
+                                <div class="small1320_text">
+                                    <div class="small1320_box">
+                                        《 {{img1.text}}<span class="small1320_span">®</span>{{img1.text2}}》</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="shade_content_box_bottom">
+                            <a href="#" target="_blank">
+                                <div class="icon"></div>
+                                <div class="text">更多游戏</div>
+                            </a>
+                            <a href="#" target="_blank">
+                                <div class="icon"></div>
+                                <div class="text">游戏论坛</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="shade_content">
+                    <div class="shade_content_box">
+                        <div class="shade_content_box_top">
+                            <!--Vue循环+es6传图片模板字符串-->
+                            <div class="shade_tow" v-for="(shade,i) of shadeTow" :key="i">
+                                <a href="#" target="_blank">
+                                    <img v-bind:src=`../img/ow_nav_images/${shade.img}` alt="">
+                                    <div class="text">{{shade.text}}</div>
+                                </a>
+                                <div class="shade_item">
+                                    <div class="shade_item_box">
+                                        <!--通过Vue循环隐藏图标-->
+                                        <a class="shade_list" href="#" v-for="(shade,n) of shadeTow[i].content" :key="n">
+                                            <img v-bind:src=`../img/ow_nav_images/${shade.img}` alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="shade_content_box_bottom">
+                            <a href="#" target="_blank">
+                                <div class="icon"></div>
+                                <div class="text">更多赛事</div>
+                            </a>
+                            <a href="#" target="_blank">
+                                <div class="icon"></div>
+                                <div class="text">申请暴雪电竞赛事授权</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="shade_content">
+                    <div class="shade_first_box">
+                        <a href="#" target="_blank" class="shade_one">登录</a>
+                    </div>
+                    <a href="#" target="_blank" class="shade_last_box">
+                        <div class="icon"></div>
+                        <div>账户</div>
+                    </a>
+                    <a href="#" target="_blank" class="shade_last_box">
+                        <div class="icon"></div>
+                        <div>免费注册</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <header class="mobile_bz_header">
+        <div class="mb_bz_header_box">
+            <div class="offNav_bz"></div>
+            <div class="mb_bz_header_content">
+                <a href="#" target="_blank" class="mb_bz_back_bzWeb">
+                    <div class="bg_box"></div>
+                </a>
+                <div class="login_register">
+                    <div  class="login">
+                        <a href="#" target="_blank">登录</a>
+                    </div>
+                    <ul class="register">
+                        <li><a href="#" target="_blank">支持</a></li>
+                        <li><a href="#" target="_blank">账户</a></li>
+                        <li><a href="#" target="_blank">注册</a></li>
+                    </ul>
+                </div>
+                <!--内容通过js循环生成-->
+                <ul class="bzNavBar_MP"></ul>
+            </div>
+        </div>
+    </header>
+    <!--手机端默认显示的导航栏-->
+    <div class="navBar_mobile">
+        <div class="iconLogo click_show_owNavbar"></div>
+        <div class="iconLogo logo_show_owNavbar"></div>
+        <div class="iconLogo blizzard_show_owNavbar"></div>
+    </div>
+    <!--守望先锋导航栏-->
+    <div class="hero_ow_nav">
+        <div class="hero_ow_nav_left">
+            <div class="hero_ow_nav_logo"></div>
+            <ul class="hero_ow_nav_item">
+                <!--通过Vue循环nav-->
+                <li class="hero_ow_nav_list" v-for="(nav,i) of navOW">
+                    <a v-bind:href="nav.a">
+                        <div class="hero_ow_nav_list_text">{{nav.name}}</div>
+                    </a>
+                    <ul class="hero_ow_nav_hide_item" >
+                        <!--再次通过Vue循环，双层循环-->
+                        <li v-for="(hide,n) of hideLi[LiIndex(i)].liName" class="hero_ow_nav_hide_list">
+                            <a href="#" target="_blank">
+                                {{hide.text}}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="hero_ow_nav_buyBtn">
+            <a href="#" target="_blank">购买</a>
+        </div>
+        <div class="hero_ow_nav_bzLogo">
+            <img src="../img/ow_home/blizzard_logo_navBar.png" alt="">
+        </div>
+        <div class="offNav_mobile"></div>
+    </div>
+    <!--hero内容-->
+    <div class="ow_hero_box">
+        <div class="ow_hero_content_box">
+            <div class="looking_heroes">
+                <h2>寻找英雄角色吗？</h2>
+                <p>在尝试各个英雄之前，先了解他们在团队中的角色。</p>
+            </div>
+            <div class="heroes_show">
+                <!---分类排序按钮-->
+                <ul class="sort_btn">
+                    <li class="sort_btn_bgColor">
+                        <span>所有</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 32 32" class="svg_icon">
+                            <path d="M29 10.7v6.2c0 .6-.1 1.1-.4 1.6-2.9 5.3-6.8 9.7-11.8 13.2-.6.4-1 .4-1.6 0-4.9-3.4-8.8-7.8-11.7-13-.3-.6-.4-1.2-.4-1.8 0-3.9.1-7.8 0-11.7-.1-2.9 2.1-3.3 4-3.8C10.4.6 13.3 0 16.6 0c3.1 0 7.7 1.1 9.4 1.6 1.3.4 2.7.9 2.9 2.2.1 1.1 0 2.2.1 3.3v3.6z"></path>
+                        </svg>
+                        <span>重装</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 32 32" class="svg_icon">
+                            <g>
+                                <path d="M2.1 28.1h7.1V32H2.1z"></path>
+                                <path d="M9.1 7v-.7C8.6 1.5 5.6 0 5.6 0s-3 1.5-3.5 6.3V25.4h7V7z"></path>
+                            </g>
+                            <g>
+                                <path d="M12.5 28.1h7.1V32h-7.1z"></path>
+                                <path d="M19.5 7v-.7C19 1.5 16 0 16 0s-3 1.5-3.5 6.3V25.4h7V7z"></path>
+                            </g>
+                            <g>
+                                <path d="M22.9 28.1H30V32h-7.1z"></path>
+                                <path d="M29.9 7v-.7C29.4 1.5 26.4 0 26.4 0s-3 1.5-3.5 6.3V25.4h7V7z"></path>
+                            </g>
+                        </svg>
+                        <span>输出</span>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 32 32" class="svg_icon">
+                            <path d="M29.3 10.2h-7.5V2.7c0-1.5-1.2-2.7-2.7-2.7h-6.3c-1.5 0-2.7 1.2-2.7 2.7v7.5H2.7c-1.5 0-2.7 1.2-2.7 2.7v6.3c0 1.5 1.2 2.7 2.7 2.7h7.5v7.5c0 1.5 1.2 2.7 2.7 2.7h6.3c1.5 0 2.7-1.2 2.7-2.7v-7.5h7.5c1.5 0 2.7-1.2 2.7-2.7v-6.3c-.1-1.5-1.3-2.7-2.8-2.7z"></path>
+                        </svg>
+                        <span>支援</span>
+                    </li>
+                </ul>
+                <!--英雄展示,通过js循环-->
+                <div class="heroes_show_box"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--页尾-->
+    <footer class="ow_footer">
+        <div class="footer">
+            <div class="f_about">
+                <a href="#" target="_blank">
+                    <span></span>
+                    在线客服
+                </a>
+                <a href="#" target="_blank">
+                    <span></span>
+                    反馈
+                </a>
+                <a href="#" target="_blank">
+                    <span></span>
+                    加入我们
+                </a>
+            </div>
+            <div class="cprt clearfix">
+                <a href="#" target="_blank"></a>
+                <a href="#" target="_blank"></a>
+                <div class="info">
+                    <ul class="statement clearfix">
+                        <li>
+                            <a href="#" target="_blank">隐私</a>
+                            |
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">法律条款</a>
+                            |
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">API</a>
+                        </li>
+                    </ul>
+                    <p>©2022 暴雪娱乐有限公司版权所有 由上海网之易网络科技发展有限公司运营 <a href="#" target="_blank">著作权侵权</a> | 新广出审[2016]378号</p>
+                    <p>文网游进字[2016]0025号 | <a href="#" target="_blank">沪网文号〔2017〕9633-727号</a> | <a href="#" target="_blank">增值电信业务经营许可证编号：沪B2－20080012</a> | <a href="#" target="_blank">沪ICP备：沪B2－20080012－15</a></p>
+                    <p>互联网违法和不良信息举报电话：0571-28090163 沪公网安备 31011502022167号 | <a href="#" target="_blank">上海市网络游戏行业自律公约</a></p>
+                    <div class="integrity">
+                        <a href="#" target="_blank">
+                            <img src="../sprite_icon/1_frame_cprt_zx110.png" alt="">
+                        </a>
+                        <a href="#" target="_blank">
+                            <img src="../sprite_icon/1_frame_cprt_sgs-icon.png" alt="">
+                        </a>
+                        <a href="#" target="_blank">
+                            <img src="../sprite_icon/1_frame_cprt_icon20120516.png" alt="">
+                        </a>
+                        <p> | 适龄提示：适合13岁及以上使用 <a href="#" target="_blank">家长监护工程</a> | <a href="#" target="_blank"> 网上有害信息专区</a></p>
+                    </div>
+                </div>
+            </div>
+            <p class="tips">
+                积极健康的游戏心态是健康游戏的开端，本游戏故事情节设置紧凑，请您合理控制游戏时间，避免沉溺游戏影响生活，注意自我保护，防范网络陷阱。
+                健康游戏忠告：抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防受骗上当。适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。
+            </p>
+        </div>
+    </footer>
+    <!--返回顶部-->
+    <div class="backTOP">TOP</div>
+</div>
+</body>
+</html>
