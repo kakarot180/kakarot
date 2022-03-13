@@ -928,7 +928,9 @@ $(function (){
     } else {
         $('.offNav_mobile,.navBar_mobile').css('display', 'none');
     }
+    /*
     $(window).resize( function (){
         location.reload()
     })
+    */
 })
